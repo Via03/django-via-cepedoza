@@ -1,0 +1,14 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}{{ object.name }} - Cepedoza, Ma. Via{% endblock %}
+
+{% block content %}
+  <h1>{{ object.name }}</h1>
+  <p>{{ object.description|linebreaks }}</p>
+  <p>Created at: {{ object.created_at }}</p>
+
+  <p>
+    <a href="{% url 'myapp:item-edit' object.pk %}">Edit</a> |
+    <a href="{% url 'myapp:item-delete' object.pk %}">Delete</a>
+  </p>
+{% endblock %}
